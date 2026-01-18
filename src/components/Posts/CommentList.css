@@ -1,0 +1,130 @@
+.comments-wrapper {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.comments-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.comments-header-row h5 {
+    color: #800020;
+    margin: 0;
+}
+
+.comment-item {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.comment-bubble {
+    background-color: #f1f3f5;
+    padding: 12px 18px;
+    border-radius: 18px;
+    border-top-left-radius: 2px; /* נותן מראה של בועת דיבור */
+}
+
+.comment-meta {
+    font-size: 0.85rem;
+    color: #00203f;
+    margin-bottom: 5px;
+}
+
+.comment-email {
+    color: #666;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.comment-text {
+    font-size: 0.95rem;
+    color: #333;
+    margin: 0;
+}
+
+.comment-item-actions {
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+}
+
+.comment-item-actions button {
+    background: none;
+    border: none;
+    color: #800020;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.add-comment-mini-btn {
+    background-color: #00203f;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* המכולה של השם - חייבת להיות relative כדי שהכרטיס יצוף מעליה */
+.commenter-name-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* הכרטיס הצף - מוסתר כברירת מחדל */
+.user-hover-card {
+    display: none;
+    position: absolute;
+    bottom: 120%; /* מופיע מעל השם */
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 200px;
+    z-index: 100;
+    text-align: center;
+    border: 1px solid rgba(128, 0, 32, 0.1);
+}
+
+/* הצגת הכרטיס במעבר עכבר */
+.commenter-name-wrapper:hover .user-hover-card {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.hover-avatar {
+    background: #800020;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.hover-name { color: #00203F; font-size: 14px; font-weight: bold; margin-bottom: 5px; }
+.hover-email { color: #800020; font-size: 12px; opacity: 0.8; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}

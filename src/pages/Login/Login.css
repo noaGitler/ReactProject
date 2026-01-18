@@ -1,0 +1,107 @@
+body {
+  /* הכחול העמוק כצבע רקע לכל האפליקציה */
+  background-color: #00203F; 
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Login.css */
+
+.login-container {
+  width: 400px;
+  min-height: 350px; 
+  padding: 40px;
+  /* הלבן המלוכלך כצבע הכרטיסייה */
+  background-color: #F5F5F5; 
+  border-radius: 20px;
+  /* צללית כהה יותר כדי שהכרטיסייה "תרחף" מעל הרקע הכחול */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+              0 0 60px rgba(0, 10, 20, 0.5);
+  text-align: center;
+  /* פס בורדו (CTA) בראש הכרטיסייה במקום כחול */
+  border-top: 6px solid #800020; 
+  border: 1px solid rgba(255, 255, 255, 0.1); /* מסגרת לבנה שקופה מאוד */
+}
+
+.login-container h2 {
+  /* הטקסט בכחול עמוק כדי לקשר אותו לרקע הכללי */
+  color: #00203F; 
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.login-container input {
+  direction: rtl;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 15px auto;
+  padding: 14px;
+  border-radius: 10px;
+  /* מסגרת עדינה */
+  border: 1px solid #D1D1D1;
+  background-color: #FFFFFF; /* אינפוט לבן בוהק על רקע מלוכלך */
+  transition: all 0.3s ease;
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: #800020; /* בורדו בפוקוס */
+  box-shadow: 0 0 8px rgba(128, 0, 32, 0.1);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  /* בורדו יוקרתי (CTA) */
+  background-color: #800020; 
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #600018; 
+  transform: translateY(-2px);
+}
+
+.register-link {
+    margin-top: 25px;
+    font-size: 15px;
+    color: #444;
+}
+
+.register-link a {
+    color: #800020; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.register-link a:hover {
+    color: #00203F;
+    text-decoration: underline;
+}
+
+.error-msg {
+    color: #800020; /* בורדו - הצבע שבחרנו לנגיעות עיצוביות */
+    background-color: rgba(128, 0, 32, 0.1); /* רקע בורדו שקוף מאוד */
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 10px 0;
+    border: 1px solid #800020;
+    text-align: center;
+}

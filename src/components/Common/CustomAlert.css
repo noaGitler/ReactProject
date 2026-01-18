@@ -1,0 +1,197 @@
+/* המיכל החיצוני של המודאל - הרקע המעומעם */
+.modal-overlay {
+    position: fixed; /* מבטיח שהמודאל יישאר מקובע למסך ולא לדף */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* עמעום הרקע */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* ערך גבוה כדי שיהיה מעל הכל, כולל ה-Header */
+}
+
+/* חלונית המודאל עצמה */
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 30px; /* תואם לעיצוב העגול שלך */
+    border: 5px solid #800020; /* מסגרת הבורדו היוקרתית */
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    /* אין צורך ב-margin top, ה-flex של ה-overlay ממרכז אוטומטית */
+}
+
+/* כרטיס המודאל - רקע לבן עם נגיעות בורדו */
+/* הוספת צללית בורדו למודאל כולו למראה יוקרתי */
+.modal-card {
+    background: #ffffff;
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(128, 0, 32, 0.2); /* הילה בורדו עדינה */
+}
+
+/* פס בורדו יוקרתי בראש המודאל */
+.modal-header-accent {
+    height: 12px;
+    background: #800020; /* הצבע החדש */
+    width: 100%;
+}
+
+/* הודעת המודאל */
+.modal-message {
+    color: #00203F;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* שדה הקלט עם מסגרת מודגשת */
+.modal-input {
+    width: 100%;
+    height: 52px;
+    border-radius: 15px;
+    border: 3px solid #800020; /* בורדו חזק ונוכח */
+    padding: 0 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #00203F;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.modal-input:focus {
+    border-color: #800020;
+    /* מסגרת בורדו במיקוד */
+    background: #ffffff;
+    box-shadow: 0 0 15px rgba(128, 0, 32, 0.15);
+    outline: none;
+}
+
+/* כפתורי הפעולה */
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.modal-btn {
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    font-size: 1rem;
+}
+
+@keyframes modalPop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 32, 63, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    backdrop-filter: blur(8px);
+}
+
+.modal-card {
+    background: white;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 450px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header-accent {
+    height: 8px;
+    background: #800020;
+}
+
+.modal-content-wrapper {
+    padding: 40px;
+    text-align: center;
+}
+
+.modal-message {
+    color: #00203F;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.modal-input {
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    border: 2px solid #800020;
+    /* המסגרת הבורדו שביקשת */
+    padding: 0 15px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-btn.primary {
+    background: #00203F;
+    color: white;
+}
+
+.modal-btn.secondary {
+    background: #00203F;
+    color: white;
+}
+
+.modal-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.modal-btn.secondary:hover {
+    background: #800020;
+    /* הופך לבורדו בריחוף */
+    transform: translateY(-2px);
+}
+
+.modal-btn.primary:hover {
+    background: #800020;
+    /* הופך לבורדו בריחוף */
+    transform: translateY(-2px);
+}

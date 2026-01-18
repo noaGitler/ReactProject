@@ -1,0 +1,319 @@
+/* מכל התמונות */
+/* הקונטיינר הראשי - מסדר את האלמנטים אחד מתחת לשני */
+.photos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+/* הגריד של התמונות - רק כאן תהיה הפריסה של הטורים */
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px; /* רווח מהטופס שלמעלה */
+}
+
+/* אזור הבקרה - העתקה מדויקת מהאלבומים */
+.photos-container .controls-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 40px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+}
+
+.albums-container .search-input:focus,
+.photos-container .search-input:focus,
+.albums-container .sort-select:focus {
+    border: 2px solid #800020; /* מסגרת בורדו עדינה בעת לחיצה */
+    box-shadow: 0 0 10px rgba(128, 0, 32, 0.2); /* הילה עדינה למראה יוקרתי */
+    outline: none; /* הסרת מסגרת ברירת המחדל של הדפדפן */
+    transition: all 0.3s ease;
+}
+
+/* עיצוב האינפוטים בתוך עמוד התמונות */
+.photos-container .search-input {
+    height: 48px;
+    padding: 0 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    font-size: 1rem;
+    color: #00203F;
+    min-width: 250px;
+    outline: none;
+}
+
+/* כפתור הוספת תמונה */
+.photos-container .add-btn {
+    height: 48px;
+    padding: 0 30px;
+    background: #00203F;
+    color: #ffffff !important;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.photos-container .add-btn:hover {
+    background: #800020;
+    transform: translateY(-2px);
+}
+
+
+
+/* כרטיס תמונה מהודר */
+.photo-card {
+    background: white;
+    padding: 15px 15px 60px 15px; /* מרווח גדול למטה בשביל הכיתוב */
+    border-radius: 2px; /* פינות חדות יותר מזכירות נייר צילום */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3); /* צל עדין */
+    transition: transform 0.3s ease;
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 300px;
+}
+
+.photo-card:hover {
+    transform: rotate(2deg) scale(1.03); /* סיבוב קטן ב-hover נותן עניין */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.photo-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* הופך את התמונה לריבוע מושלם */
+    object-fit: cover;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+/* מסגרת בורדו יוקרתית סביב התמונה עצמה */
+.photo-wrapper {
+    width: 100%;
+    height: 350px;
+    padding: 12px; /* יוצר מרווח למסגרת */
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px; /* עיגול פנימי לתמונה */
+    border: 2px solid #800020; /* מסגרת הבורדו שביקשת */
+    transition: transform 0.5s ease;
+}
+
+
+/* פס בורדו דקורטיבי בתחתית הכרטיס */
+.photo-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: #800020;
+    transform: scaleX(0); /* מתחיל מרוחב אפס */
+    transition: transform 0.4s ease;
+    transform-origin: center;
+}
+
+.photo-card:hover::after {
+    transform: scaleX(1); /* הפס נפרש ב-Hover */
+}
+
+
+/* כפתורי פעולה עדינים */
+.photo-actions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.action-link {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.action-link.edit { color: #00203F; }
+.action-link.delete { color: #800020; }
+
+.albums-container .search-input{
+    height: 48px;
+    padding: 0 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    font-size: 1rem;
+    color: #00203F;
+    min-width: 200px;
+    outline: none;
+}
+
+.photo-title {
+    color: #00203F;          /* הכחול העמוק של AdminX */
+    font-size: 1.5rem;       /* גודל בולט ומרשים */
+    font-weight: 700;        /* עובי מודגש */
+    margin: 20px 0;          /* ריווח שנותן אוויר לטייטל */
+    text-align: center;      /* מירכוז מושלם */
+    text-transform: capitalize; /* הופך כל מילה לאות גדולה למראה מקצועי */
+    letter-spacing: -0.2px;/* מצמצם מעט את הרווח בין האותיות למראה מודרני */
+    margin-bottom: 25px;
+}
+
+.photo-info {
+    padding: 30px 20px; /* הגדלת הריווח סביב הטקסט */
+}
+
+.photos-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* יוצר עמודות אוטומטיות */
+    gap: 30px;
+    padding: 20px;
+    justify-items: center;
+}
+
+/* הפס העליון בבורדו יין חזק */
+.modal-header-accent {
+    height: 12px;
+    background: #800020; /* הצבע החדש */
+    width: 100%;
+}
+
+/* שדה הקלט עם מסגרת מודגשת */
+.modal-input {
+    width: 100%;
+    height: 52px;
+    border-radius: 15px;
+    border: 3px solid #800020; /* בורדו חזק ונוכח */
+    padding: 0 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #00203F;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* הוספת צללית בורדו למודאל כולו למראה יוקרתי */
+.modal-card {
+    background: #ffffff;
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(128, 0, 32, 0.2); /* הילה בורדו עדינה */
+}
+
+/* מכל עריכה בתוך הכרטיסייה */
+.inline-edit-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* שדה הקלט של העריכה - בסטייל של AdminX */
+.inline-edit-input {
+    width: 90%;
+    height: 40px;
+    border-radius: 12px;
+    border: 2px solid #800020; /* בורדו יין חזק כפי שביקשת */
+    padding: 0 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #00203F;
+    text-align: center;
+    outline: none;
+    background-color: #fdfdfd;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.inline-edit-input:focus {
+    box-shadow: 0 0 10px rgba(128, 0, 32, 0.2); /* הילה עדינה בבורדו */
+    background-color: #ffffff;
+}
+
+/* סידור כפתורי השמירה והביטול */
+.inline-edit-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* כפתור שמירה קטן ויוקרתי */
+.save-link {
+    background: #00203F; /* הכחול העמוק של המערכת */
+    color: white;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-link:hover {
+    background: #800020; /* הופך לבורדו בריחוף */
+    transform: translateY(-1px);
+}
+
+/* כפתור ביטול עדין */
+.cancel-link {
+    background: none;
+    border: none;
+    color: #666;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.cancel-link:hover {
+    color: #800020;
+}
+
+.load-more-btn {
+    display: block;
+    margin: 40px auto; /* ממרכז את הכפתור ונותן לו מרווח מהתמונות */
+    padding: 12px 35px;
+    background-color: transparent; /* רקע שקוף למראה נקי */
+    color: #800020; /* צבע בורדו יין לטקסט */
+    border: 2px solid #800020; /* מסגרת בורדו עדינה */
+    border-radius: 15px; /* פינות מעוגלות בקו אחד עם הגלריה */
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* אנימציה חלקה ויוקרתית */
+    letter-spacing: 0.5px;
+}
+
+.load-more-btn:hover {
+    background-color: #800020; /* מילוי בורדו בריחוף */
+    color: #ffffff; /* הטקסט הופך ללבן */
+    box-shadow: 0 8px 20px rgba(128, 0, 32, 0.25); /* הילה עדינה שנותנת עומק */
+    transform: translateY(-3px); /* אפקט הרמה קטן */
+}
+
+.load-more-btn:active {
+    transform: translateY(-1px);
+}

@@ -1,0 +1,208 @@
+/* האנימציה הרגועה */
+@keyframes smoothEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.97) translateY(15px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+
+.todos-page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00203F;
+    padding-top: 60px;
+}
+
+.todos-container {
+    background: #F5F5F5;
+    width: 800px; 
+    max-width: 1100px; 
+    height: 750px; 
+    border-radius: 35px;
+    padding: 50px 70px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    position: relative;
+    animation: smoothEntrance 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.controls input[type="text"] {
+    flex: 3;
+    padding: 14px 22px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.controls input:focus {
+    border-color: #800020;
+    box-shadow: 0 0 10px rgba(128, 0, 32, 0.1);
+}
+
+.controls select {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: white;
+    font-weight: bold;
+    color: #00203F;
+    cursor: pointer;
+}
+
+.todos-list {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.todos-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.todos-list::-webkit-scrollbar-thumb {
+    background: #800020;
+    border-radius: 10px;
+}
+
+/* כרטיס מטלה */
+.todo-card {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px 30px;
+    margin-bottom: 10px;
+    border-radius: 40px; /* מעוגל יותר כמו בפוסטים */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.todo-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* מכולת מידע בצד שמאל (ID וטקסט) */
+.todo-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+/* ID בעיצוב מעוגל ונקי */
+/* העיצוב הזה חייב להיות זהה בשני המקומות */
+.todo-id{
+    font-size: 13px;
+    font-weight: 900;
+    color: #800020;
+    background: rgba(128, 0, 32, 0.07);
+    
+    /* הגדרות צורה - אליפסה יציבה */
+    height: 32px; 
+    min-width: 48px; /* רוחב מינימלי שמכריח צורת אליפסה */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px; /* עיגול מלא של הקצוות */
+    
+    /* מניעת עיוותים */
+    flex-shrink: 0; /* מונע מהטקסט ליד למעוך את האליפסה */
+    padding: 0 12px;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.todo-title {
+    color: #00203F;
+    font-size: 17px;
+    font-weight: 500;
+    flex: 1; /* מאפשר לטקסט לתפוס את שאר המקום */
+}
+
+/* מכולת כפתורים בצד ימין - כאן הקסם קורה */
+.todo-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* מרווח קבוע ושווה בין כל האלמנטים */
+}
+
+/* צ'קבוקס בורדו */
+.todo-card input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #800020;
+    margin: 0; /* ביטול מרווחים מיותרים */
+}
+
+/* כפתורי פעולה */
+.edit-btn, .delete-btn {
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid;
+    background: none;
+    text-transform: lowercase;
+}
+
+.edit-btn {
+    border-color:#800020;
+    color: #800020;
+}
+
+.edit-btn:hover {
+    background: #800020;
+    color: white;
+}
+
+.delete-btn {
+    border-color: #800020;
+    color: #800020;
+}
+
+.delete-btn:hover {
+    background: #800020;
+    color: white;
+}
+
+.add-btn {
+    background-color: #00203F;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #003a70;
+}

@@ -1,0 +1,145 @@
+/* מכל ראשי לעמוד */
+.albums-container {
+    padding: 0 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* כרטיסיית בקרה ממורכזת - מניעת התנגשויות */
+.albums-container .controls-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 40px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+}
+
+/* עיצוב שדות הקלט בתוך עמוד אלבומים */
+.albums-container .search-input, 
+.albums-container .sort-select {
+    height: 48px;
+    padding: 0 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    font-size: 1rem;
+    color: #00203F;
+    min-width: 200px;
+    outline: none;
+}
+
+/* כפתור הוספה ייחודי ויוקרתי */
+.albums-container .add-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 30px;
+    background: #00203F;
+    color: #ffffff !important;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 32, 63, 0.2);
+    white-space: nowrap;
+}
+
+.albums-container .add-btn:hover {
+    background: #800020;
+    transform: translateY(-2px);
+}
+
+/* גריד אלבומים מרשים */
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* כרטיס אלבום יחיד */
+.album-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 4px; /* פינות פחות עגולות נותנות מראה של נייר/אלבום */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    position: relative;
+    text-decoration: none;
+    overflow: visible; /* מאפשר לסרט "לצאת" מהגבולות */
+    padding-top: 60px; /* נותן מקום לסרט שלא יתנגש בטקסט */
+    
+    /* אפקט ערימת דפים באמצעות צללים */
+    box-shadow: 
+        0 1px 1px rgba(0,0,0,0.1),
+        0 10px 0 -5px #eee,
+        0 10px 1px -4px rgba(0,0,0,0.15),
+        0 20px 0 -10px #eee,
+        0 20px 1px -9px rgba(0,0,0,0.15);
+        
+    transition: all 0.3s ease;
+}
+
+.album-card:hover {
+    transform: translateY(-5px) rotate(-2deg); /* סיבוב קל ב-hover נותן תחושה שזה אלבום מונח על שולחן */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.album-id-badge {
+    background: #800020;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.album-title {
+    color: #00203F;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.album-id-badge {
+    position: absolute;
+    top: -10px; /* מוציא את הסרט מעט למעלה */
+    right: 15px;
+    background: #800020;
+    color: white;
+    width: 32px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    
+    /* הוספת צל חזק יותר כדי ליצור עומק של קיפול */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+    z-index: 10;
+}

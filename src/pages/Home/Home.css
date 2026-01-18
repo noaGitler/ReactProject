@@ -1,0 +1,94 @@
+/* מוודא שה-Hero עצמו מתפרס יפה */
+.welcome-hero {
+    width: 100%;
+    max-width: 900px; /* מגביל את הרוחב כדי שהטקסט לא יימרח */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center; /* ממרכז את כל השורות בתוך הקופסה */
+    padding: 60px;
+    background: rgba(245, 245, 245, 0.05);
+    border-radius: 40px;
+    border: 1px solid rgba(245, 245, 245, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.hero-logo {
+    font-size: 80px; /* לוגו ענק במרכז */
+    font-weight: 900;
+    color: #F5F5F5;
+    margin-bottom: 20px;
+    display: inline-block; /* נדרש כדי שהאנימציה תפעל נכון */
+    /* הוספת אנימציית הדופק - פועלת ללא הפסקה */
+    animation: pulseLogo 3s infinite ease-in-out;
+}
+
+.hero-logo span {
+    color: #800020; /* ה-X המזוהה בבורדו */
+}
+
+.hero-content h1 {
+    color: #F5F5F5;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    color: rgba(245, 245, 245, 0.7);
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.hero-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #800020;
+    margin: 30px auto;
+    border-radius: 2px;
+}
+
+.hero-footer {
+    font-style: italic;
+    font-size: 15px !important;
+    color: #800020 !important;
+}
+
+/* אנימציית כניסה מרשימה (קיימת) */
+@keyframes fadeInScale {
+    from { 
+        opacity: 0; 
+        transform: scale(0.95); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+/* הגדרת אנימציית הדופק ללוגו (חדש) */
+@keyframes pulseLogo {
+    0%, 100% { 
+        transform: scale(1); 
+        filter: drop-shadow(0 0 0px rgba(128, 0, 32, 0));
+    }
+    50% { 
+        transform: scale(1.05); 
+        filter: drop-shadow(0 0 15px rgba(128, 0, 32, 0.6));
+    }
+}
+
+.content-area {
+    margin-top: 80px; /* מפנה מקום לנאבר הקבוע */
+    min-height: calc(100vh - 80px); /* תופס את כל גובה המסך שנשאר */
+    display: flex;
+    justify-content: center; /* ממרכז אופקית */
+    align-items: center;     /* ממרכז אנכית */
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}

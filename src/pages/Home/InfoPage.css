@@ -1,0 +1,160 @@
+/* body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* מבטיח ששום דבר לא יגרום לגלילה ברמת הדף */
+/* } */
+
+.info-container {
+    /* במקום padding גדול, נשתמש ב-height כדי למרכז */
+    height: calc(100vh - 80px);
+    /* מפחית את גובה ה-Navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* ממרכז אנכית */
+    align-items: center;
+    /* ממרכז אופקית */
+    overflow: hidden;
+    /* מונע הופעת פסי גלילה */
+    margin: 0 auto;
+}
+
+.info-layout {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    /* מוודא שהפריסה לא תהיה רחבה מדי ותגרום לגלילה אופקית */
+    max-width: 100%;
+}
+
+.info-card {
+    background: #ffffff;
+    width: 380px;
+    height: 380px;
+    /* הקטנה קלה נוספת כדי להיות בטוחים */
+    border-radius: 45px;
+    box-shadow: 0 15px 45px rgba(0, 32, 63, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+    /* קריטי: מונע מה-padding להגדיל את התיבה */
+}
+
+/* עיצוב התיבות (Pills) בתוך הכרטיסייה הימנית */
+.details-list {
+    width: 100%;
+    /* תופס את רוחב הפדינג של הכרטיסייה */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ממרכז את התיבות עצמן */
+}
+
+.info-pill {
+    width: 90%;
+    /* מבטיח שהתיבה לא תצא מהגבולות */
+    background: #fcfdfe;
+    border: 1px solid #f0f2f5;
+    padding: 12px 20px;
+    border-radius: 25px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    /* יוצר רווח בין התווית לערך */
+    align-items: center;
+}
+
+.pill-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.pill-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #00203F;
+}
+
+/* אלמנטים נוספים לעיצוב הפרופיל */
+.avatar-circle {
+    width: 100px;
+    height: 100px;
+    background: #800020;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(128, 0, 32, 0.2);
+}
+
+.display-name {
+    font-size: 1.8rem;
+    color: #00203F;
+    margin: 10px 0;
+}
+
+.username-badge {
+    color: #800020;
+    background: rgba(128, 0, 32, 0.05);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.card-title {
+    color: #00203F;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* ביטול המסגרת הגדולה ששמנו קודם */
+.details-border-box {
+    border: none; 
+    background: none;
+    padding: 0;
+    width: 100%;
+}
+
+/* הוספת מסגרת בורדו עדינה לכל שורת מידע בנפרד */
+.info-pill {
+    width: 90%;
+    background: #ffffff; /* רקע לבן נקי */
+    border: 1px solid rgba(128, 0, 32, 0.2); /* מסגרת בורדו עדינה ויוקרתית */
+    padding: 14px 22px;
+    border-radius: 25px; /* פינות מעוגלות בקו של המערכת */
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease; /* אנימציה עדינה למעבר עכבר */
+}
+
+/* אפקט ריחוף מעל השורה */
+.info-pill:hover {
+    border-color: rgba(128, 0, 32, 0.4);
+    background: rgba(128, 0, 32, 0.02);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(128, 0, 32, 0.05);
+}
+
+.pill-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #800020; /* התווית בצבע בורדו תואם למסגרת */
+    letter-spacing: 0.8px;
+}
+
+.pill-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00203F; /* המידע נשאר בכחול עמוק לניגודיות טובה */
+}
